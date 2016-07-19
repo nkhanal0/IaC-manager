@@ -6,71 +6,6 @@ resource "aws_vpc" "default" {
   }
 }
 
-resource "aws_security_group" "nat" {
-  name = "vpc_nat"
-  description = "Allow traffic to pass from the private subnet to the internet"
-  ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
-    cidr_blocks = [
-      "${var.private_subnet_cidr}"]
-  }
-  ingress {
-    from_port = 443
-    to_port = 443
-    protocol = "tcp"
-    cidr_blocks = [
-      "${var.private_subnet_cidr}"]
-  }
-  ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
-  ingress {
-    from_port = -1
-    to_port = -1
-    protocol = "icmp"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
-  egress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
-  egress {
-    from_port = 443
-    to_port = 443
-    protocol = "tcp"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
-  egress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = [
-      "${var.vpc_cidr}"]
-  }
-  egress {
-    from_port = -1
-    to_port = -1
-    protocol = "icmp"
-    cidr_blocks = [
-      "0.0.0.0/0"]
-  }
-  vpc_id = "${aws_vpc.default.id}"
-  tags {
-    Name = "${var.pre_tag}-NAT-${var.post_tag}"
-  }
-}
-
 resource "aws_subnet" "availability-zone-public" {
   vpc_id = "${aws_vpc.default.id}"
   cidr_block = "${var.public_subnet_cidr}"
@@ -78,15 +13,6 @@ resource "aws_subnet" "availability-zone-public" {
   tags {
     Name = "${var.pre_tag}-Public-Subnet-${var.post_tag}"
   }
-}
-
-resource "aws_eip" "nat" {
-  vpc = true
-}
-
-resource "aws_nat_gateway" "nat" {
-  allocation_id = "${aws_eip.nat.id}"
-  subnet_id = "${aws_subnet.availability-zone-public.id}"
 }
 
 resource "aws_internet_gateway" "default" {
@@ -194,7 +120,6 @@ resource "aws_instance" "manager" {
   provisioner "remote-exec" {
     inline = [
       "echo '/* Generated outputs by Terraform */' >> ~/terraform.out",
-      "echo 'aws_nat_gateway_id = \"${aws_nat_gateway.nat.id}\"' >> ~/terraform.out",
       "echo 'public_security_group_id = \"${aws_security_group.public.id}\"' >> ~/terraform.out",
       "echo 'public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"' >> ~/terraform.out",
       "echo 'vpc_id = \"${aws_vpc.default.id}\"' >> ~/terraform.out",
