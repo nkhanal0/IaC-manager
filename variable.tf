@@ -32,10 +32,6 @@ variable "private_subnet_cidr" {
   default = "10.0.1.0/24"
 }
 
-output "aws_nat_gateway_id" {
-  value = "${aws_nat_gateway.nat.id}"
-}
-
 output "public_security_group_id" {
   value = "${aws_security_group.public.id}"
 }

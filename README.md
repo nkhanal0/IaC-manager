@@ -2,8 +2,8 @@
 This terraform script will setup an infra for management in AWS:
  - CentOS (Manager Node)
  - VPC
- - Private & Public subnet
- - NAT and Internet gateway
+ - Public subnet
+ - Internet gateway
 
 #### Pre-requisites
 - An IAM account with administrator privileges.
