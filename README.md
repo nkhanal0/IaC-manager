@@ -15,6 +15,7 @@ This terraform script will setup an infra for management in AWS:
 - `cp terraform.dummy terraform.tfvars`
 - Modify params in `terraform.tfvars`
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
+- We can also create a documentation of terraform by running `bash generate-docs.sh`
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
 - You may have `prod/dev/stage` configurations in
@@ -23,3 +24,4 @@ This terraform script will setup an infra for management in AWS:
 #### Notes
 SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
+More details on terraform-docs in https://github.com/segmentio/terraform-docs
