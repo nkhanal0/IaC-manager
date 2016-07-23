@@ -39,7 +39,7 @@ resource "aws_route_table_association" "availability-zone-public" {
 }
 
 resource "aws_security_group" "public" {
-  name = "${var.pre_tag}-mesos-security-public-${var.post_tag}"
+  name = "${var.pre_tag}-Mesos-Security-Public-${var.post_tag}"
   description = "Allow incoming HTTP connections."
   ingress {
     from_port = 80
