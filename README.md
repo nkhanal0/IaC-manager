@@ -7,7 +7,7 @@ This terraform script will setup an infra for management in AWS:
 
 #### Pre-requisites
 - An IAM account with administrator privileges.
-- Install terraform in the machine: https://www.terraform.io/intro/getting-started/install.html
+- Install [terraform](https://www.terraform.io/intro/getting-started/install.html) on your machine.
 
 #### Steps for installation
 - Clone this repo .
@@ -24,4 +24,4 @@ This terraform script will setup an infra for management in AWS:
 #### Notes
 SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
-More details on terraform-docs in https://github.com/segmentio/terraform-docs
+More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
