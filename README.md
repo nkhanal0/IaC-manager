@@ -1,4 +1,4 @@
-### IaC: Manager Node
+### IaC: Manager Node (Jump Server)
 This terraform script will setup an infra for management in AWS:
  - CentOS (Manager Node)
  - VPC
