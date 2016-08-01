@@ -2,7 +2,7 @@ resource "aws_instance" "manager" {
   ami = "${lookup(var.amis, var.aws_region)}"
   availability_zone = "${var.aws_region}a"
   instance_type = "t2.micro"
-  key_name = "${var.aws_key_name}"
+  key_name = "${var.key_pair_name}"
   vpc_security_group_ids = [
     "${aws_security_group.public.id}"]
   subnet_id = "${aws_subnet.availability-zone-public.id}"
@@ -13,8 +13,6 @@ resource "aws_instance" "manager" {
   }
   connection {
     user = "centos"
-    private_key = "${file(var.aws_key_path)}"
-    agent = false
   }
 
   /* Installing teraform in manager instance*/
@@ -39,14 +37,7 @@ resource "aws_instance" "manager" {
       "echo 'public_security_group_id = \"${aws_security_group.public.id}\"' >> ~/terraform.out",
       "echo 'public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"' >> ~/terraform.out",
       "echo 'vpc_id = \"${aws_vpc.default.id}\"' >> ~/terraform.out",
-      "echo 'aws_key_path = \"${var.aws_key_path}\"' >> ~/terraform.out",
-      "echo 'aws_key_name = \"${var.aws_key_name}\"' >> ~/terraform.out"
+      "echo 'key_pair_name = \"${var.key_pair_name}\"' >> ~/terraform.out"
     ]
-  }
-
-  /* Copy the ssh key to manager node*/
-  provisioner "file" {
-    source = "${var.aws_key_path}"
-    destination = "~/${replace(var.aws_key_path,\"./" , "")}"
   }
 }

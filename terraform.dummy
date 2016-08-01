@@ -9,9 +9,8 @@ aws_secret_key = "Dummy"
  */
 /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
 aws_region = "ap-southeast-1"
-/* aws_key_name should be exactly as it is in your AWS */
-aws_key_name = "Dummy"
-aws_key_path = "./Dummy.pem"
+/* key_pair_name should be exactly as it is in your AWS */
+key_pair_name = "Dummy"
 public_subnet_cidr = "10.0.0.0/24"
 pre_tag = "Dummy-Prod"
 post_tag = "Terra"

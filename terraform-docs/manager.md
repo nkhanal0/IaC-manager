@@ -5,8 +5,7 @@
 |------|-------------|:-----:|:-----:|
 | aws_access_key |  | - | yes |
 | aws_secret_key |  | - | yes |
-| aws_key_path |  | - | yes |
-| aws_key_name |  | - | yes |
+| key_pair_name |  | - | yes |
 | pre_tag |  | - | yes |
 | post_tag |  | - | yes |
 | aws_region | EC2 Region for the VPC | - | yes |
