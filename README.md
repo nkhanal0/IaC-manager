@@ -8,6 +8,9 @@ This terraform script will setup an infra for management in AWS:
 #### Pre-requisites
 - An IAM account with administrator privileges.
 - Install [terraform](https://www.terraform.io/intro/getting-started/install.html) on your machine.
+- Public Key Access with Agent support/ Agent Forwarding
+  ssh-add ~/.ssh/id_rsa
+  ssh -A user@ip
 
 #### Steps for installation
 - Clone this repo .
