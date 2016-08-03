@@ -1,3 +1,11 @@
+output "manager_public_ip" {
+  value = "${aws_instance.manager.public_ip}"
+}
+
+output "key_pair_name" {
+  value = "${var.key_pair_name}"
+}
+
 output "public_security_group_id" {
   value = "${aws_security_group.public.id}"
 }
