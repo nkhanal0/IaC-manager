@@ -1,9 +1,12 @@
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "key_pair_name" {}
-variable "pre_tag" {}
-variable "post_tag" {}
-
+variable "key_pair_name" {
+  description = "The key-pair name created with AWS"
+}
+variable "pre_tag" {
+  description = "Pre Tag for all the resources"
+}
+variable "post_tag" {
+  description = "Post Tag for all the resources"
+}
 variable "aws_region" {
   description = "EC2 Region for the VPC"
 }

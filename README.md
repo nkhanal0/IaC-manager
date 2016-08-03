@@ -22,6 +22,12 @@ This terraform script will setup an infra for management in AWS:
 - Modify params in `terraform.tfvars`
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
 - We can also create a documentation of terraform by running `bash generate-docs.sh`
+- Export the bash varibles for AWS.
+```
+export AWS_ACCESS_KEY_ID="anaccesskey" 
+export AWS_SECRET_ACCESS_KEY="asecretkey"
+export AWS_DEFAULT_REGION="us-west-2"
+```
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
 - You may have `prod/dev/stage` configurations in
