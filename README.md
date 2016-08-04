@@ -20,7 +20,7 @@ This terraform script will setup an infra for management in AWS:
 - `cp terraform.dummy terraform.tfvars`
 - Modify params in `terraform.tfvars`
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
-- Export AWS credentials as bash variables.
+- Export AWS credentials as bash variables (`ap-northeast-1` for Tokyo and `ap-southeast-1` for Singapore region).
 ```bash
 export AWS_ACCESS_KEY_ID="anaccesskey" 
 export AWS_SECRET_ACCESS_KEY="asecretkey"
@@ -37,6 +37,5 @@ Generate terraform documentation by running `bash generate-docs.sh`
 #### Notes
 SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
-More details on [terraform-docs](https://github.com/segmentio/terraform-docs).<br />
-`ap-northeast-1` for Tokyo and `ap-southeast-1` for Singapore regoions.
+More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
 
