@@ -47,3 +47,6 @@ terraform.tfvars*
 
 # Ignore .pem ssh files from source code
 *.pem
+
+# Mac 
+.DS_Store
