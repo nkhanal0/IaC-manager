@@ -11,7 +11,7 @@ This terraform script will setup an infra for management in AWS:
 - Public Key Access with Agent support/ Agent Forwarding:
 
   ```bash
-  ssh-add ~/.ssh/id_rsa
+  ssh-add pemfile.pem
   ssh -A user@ip
   ```
 

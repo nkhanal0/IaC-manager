@@ -12,7 +12,6 @@
 | amis | Centos AMIs by region | `<map>` | no |
 | vpc_cidr | CIDR for the whole VPC | `"10.0.0.0/16"` | no |
 | public_subnet_cidr | CIDR for the Public Subnet | `"10.0.0.0/24"` | no |
-| private_subnet_cidr | CIDR for the Private Subnet | `"10.0.1.0/24"` | no |
 
 ## Outputs
 
