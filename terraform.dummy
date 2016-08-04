@@ -4,5 +4,4 @@ post_tag = "Terra"
 
 /* Secret */
 aws_region = "ap-southeast-1"   /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
-key_pair_name = "Dummy"         /* aws_key_name should be exactly as it is in your AWS */
-public_subnet_cidr = "10.0.0.0/24"
+key_pair_name = "Dummy"         /* key_pair_name should be exactly as it is in your AWS */
