@@ -12,7 +12,7 @@ variable "aws_region" {
 }
 
 variable "amis" {
-  description = "Centos AMIs by region"
+  description = "CentOS AMIs by region"
   default = {
     ap-southeast-1 = "ami-f068a193"
     ap-northeast-1 = "ami-eec1c380"
