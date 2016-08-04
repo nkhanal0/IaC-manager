@@ -33,11 +33,16 @@ resource "aws_instance" "manager" {
   */
   provisioner "remote-exec" {
     inline = [
-      "echo '/* Generated outputs by Terraform */' >> ~/terraform.out",
-      "echo 'public_security_group_id = \"${aws_security_group.public.id}\"' >> ~/terraform.out",
-      "echo 'public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"' >> ~/terraform.out",
-      "echo 'vpc_id = \"${aws_vpc.default.id}\"' >> ~/terraform.out",
-      "echo 'key_pair_name = \"${var.key_pair_name}\"' >> ~/terraform.out"
+      "cat <<EOT >> terraform.out",
+      "/* Generated outputs by Terraform */",
+      "aws_region = \"${var.aws_region}\"",
+      "vpc_id = \"${aws_vpc.default.id}\"",
+      "vpc_cidr = \"${aws_vpc.default.cidr_block}\"",
+      "public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"",
+      "public_security_group_id = \"${aws_security_group.public.id}\"",
+      "key_pair_name = \"${var.key_pair_name}\"",
+      "EOT",
     ]
   }
+
 }
