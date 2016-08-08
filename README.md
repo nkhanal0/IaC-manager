@@ -35,7 +35,7 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 Generate terraform documentation by running `bash generate-docs.sh`
 
 #### Notes
-SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
+- SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
-More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
+- More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
 
