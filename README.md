@@ -20,8 +20,8 @@ This terraform script will setup an infra for management in AWS:
 - `cp terraform.dummy terraform.tfvars`
 - Modify params in `terraform.tfvars`
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
-- Export AWS credentials as bash variables.
-```
+- Export AWS credentials as bash variables (e.g. `ap-northeast-1` for Tokyo and `ap-southeast-1` for Singapore region):
+```bash
 export AWS_ACCESS_KEY_ID="anaccesskey" 
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"

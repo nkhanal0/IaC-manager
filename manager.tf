@@ -35,6 +35,8 @@ resource "aws_instance" "manager" {
     inline = [
       "cat <<EOT >> terraform.out",
       "/* Generated outputs by Terraform */",
+      "pre_tag = \"${var.pre_tag}\"",
+      "post_tag = \"${var.post_tag}\"",
       "aws_region = \"${var.aws_region}\"",
       "vpc_id = \"${aws_vpc.default.id}\"",
       "vpc_cidr = \"${aws_vpc.default.cidr_block}\"",
