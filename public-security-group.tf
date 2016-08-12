@@ -46,5 +46,8 @@ resource "aws_security_group" "public" {
   vpc_id = "${aws_vpc.default.id}"
   tags {
     Name = "${var.pre_tag}-Public-SG-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
 }

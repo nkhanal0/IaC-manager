@@ -7,6 +7,15 @@ variable "pre_tag" {
 variable "post_tag" {
   description = "Post Tag for all the resources"
 }
+variable "tag_service" {
+  description = "Service tag"
+}
+variable "tag_environment" {
+  description = "Environment tag"
+}
+variable "tag_version" {
+  description = "Version tag"
+}
 variable "aws_region" {
   description = "EC2 Region for the VPC"
 }
