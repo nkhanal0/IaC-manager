@@ -1,6 +1,9 @@
 /* Cluster Name */
 pre_tag = "Dummy-Prod"
 post_tag = "Terra"
+tag_service = "DCOS 1.73"
+tag_environment = "Staging"
+tag_version = "1.02"
 
 /* Secret */
 aws_region = "ap-southeast-1"   /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */

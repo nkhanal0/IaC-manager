@@ -10,6 +10,9 @@ resource "aws_instance" "manager" {
   associate_public_ip_address = true
   tags {
     Name = "${var.pre_tag}-Manager-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
   connection {
     user = "centos"
@@ -38,6 +41,9 @@ resource "aws_instance" "manager" {
       "/* Generated outputs by Terraform */",
       "pre_tag = \"${var.pre_tag}\"",
       "post_tag = \"${var.post_tag}\"",
+      "tag_service = \"${var.tag_service}\"",
+      "tag_environment = \"${var.tag_environment}\"",
+      "tag_version = \"${var.tag_version}\"",
       "aws_region = \"${var.aws_region}\"",
       "vpc_id = \"${aws_vpc.default.id}\"",
       "vpc_cidr = \"${aws_vpc.default.cidr_block}\"",

@@ -3,6 +3,9 @@ resource "aws_vpc" "default" {
   enable_dns_hostnames = true
   tags {
     Name = "${var.pre_tag}-VPC-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
 }
 
@@ -12,6 +15,9 @@ resource "aws_subnet" "availability-zone-public" {
   availability_zone = "${var.aws_region}a"
   tags {
     Name = "${var.pre_tag}-Public-Subnet-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
 }
 
@@ -19,6 +25,9 @@ resource "aws_internet_gateway" "default" {
   vpc_id = "${aws_vpc.default.id}"
   tags {
     Name = "${var.pre_tag}-IGW-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
 }
 
@@ -30,6 +39,9 @@ resource "aws_route_table" "availability-zone-public" {
   }
   tags {
     Name = "${var.pre_tag}-Public-Subnet-${var.post_tag}"
+    Service = "${var.tag_service}"
+    Environment = "${var.tag_environment}"
+    Version = "${var.tag_version}"
   }
 }
 
