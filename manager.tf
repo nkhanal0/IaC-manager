@@ -22,7 +22,7 @@ resource "aws_instance" "manager" {
   provisioner "remote-exec" {
     inline = [
       "sudo yum install -y git",  /* install git */
-      "curl https://releases.hashicorp.com/terraform/0.7.0/terraform_0.7.0_linux_amd64.zip > terraform_setup.zip",
+      "curl https://releases.hashicorp.com/terraform/0.7.1/terraform_0.7.1_linux_amd64.zip > terraform_setup.zip",
       "sudo yum -y install unzip",
       "sudo unzip terraform_setup.zip -d /home/centos/terraform/",
       "sudo rm terraform_setup.zip",
