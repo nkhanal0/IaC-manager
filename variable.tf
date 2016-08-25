@@ -25,6 +25,7 @@ variable "amis" {
   default = {
     ap-southeast-1 = "ami-f068a193"
     ap-northeast-1 = "ami-eec1c380"
+    ap-south-1 = "ami-95cda6fa"
   }
 }
 

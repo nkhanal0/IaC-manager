@@ -21,13 +21,13 @@ resource "aws_instance" "manager" {
   /* Installing teraform in manager instance*/
   provisioner "remote-exec" {
     inline = [
-      "sudo yum install -y git",  /* install git */
+      "curl --silent --location https://rpm.nodesource.com/setup_4.x | sudo -E bash -",
       "curl https://releases.hashicorp.com/terraform/0.7.1/terraform_0.7.1_linux_amd64.zip > terraform_setup.zip",
-      "sudo yum -y install unzip",
+      "sudo yum install -y git zip unzip nodejs",
       "sudo unzip terraform_setup.zip -d /home/centos/terraform/",
       "sudo rm terraform_setup.zip",
       "echo 'PATH=$PATH:$HOME/terraform' >> ~/.bashrc",
-      "source ~/.bashrc && export PATH",
+      "source ~/.bashrc && export PATH"
     ]
   }
 
