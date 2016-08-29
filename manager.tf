@@ -1,6 +1,6 @@
 resource "aws_instance" "manager" {
   ami = "${lookup(var.amis, var.aws_region)}"
-  availability_zone = "${var.aws_region}a"
+  availability_zone = "${data.aws_availability_zones.available.names[0]}"
   instance_type = "t2.micro"
   key_name = "${var.key_pair_name}"
   vpc_security_group_ids = [
