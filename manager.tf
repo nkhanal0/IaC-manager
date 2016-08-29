@@ -22,7 +22,7 @@ resource "aws_instance" "manager" {
   provisioner "remote-exec" {
     inline = [
       "curl --silent --location https://rpm.nodesource.com/setup_4.x | sudo -E bash -",
-      "curl https://releases.hashicorp.com/terraform/0.7.1/terraform_0.7.1_linux_amd64.zip > terraform_setup.zip",
+      "curl https://releases.hashicorp.com/terraform/0.7.2/terraform_0.7.2_linux_amd64.zip > terraform_setup.zip",
       "sudo yum install -y git zip unzip nodejs",
       "sudo unzip terraform_setup.zip -d /home/centos/terraform/",
       "sudo rm terraform_setup.zip",
