@@ -12,7 +12,6 @@ This terraform script will setup an infra for management in AWS:
 
   ```bash
   ssh-add <key_pair_name>.pem
-  ssh -A centos@<manager_public_ip>
   ```
 
 #### Steps for installation
@@ -31,6 +30,11 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 - You may have `prod/dev/stage` configurations in
 `terraform.tfvars.{prod/dev/stage}` files (already ignored by `.gitignore`).
 
+#### Test
+  ```bash
+  ssh -A centos@<manager_public_ip>
+  ```
+  
 #### Generate Docs 
 Generate terraform documentation by running `bash generate-docs.sh`
 
