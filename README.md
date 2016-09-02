@@ -1,6 +1,6 @@
 ### IaC: Manager Node (Jump Server)
-This terraform script will setup an infra for management in AWS:
- - CentOS (Manager Node)
+This terraform script will setup an infrastructure for management in AWS and will create following resources:
+ - Manager Node (CentOS)
  - VPC
  - Public subnet
  - Internet gateway
@@ -15,7 +15,7 @@ This terraform script will setup an infra for management in AWS:
   ```
 
 #### Steps for installation
-- Clone this repo .
+- Clone this repo.
 - `cp terraform.dummy terraform.tfvars`
 - Modify params in `terraform.tfvars`
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region

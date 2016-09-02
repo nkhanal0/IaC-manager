@@ -1,9 +1,9 @@
 /* Cluster Name */
-pre_tag = "Dummy-Prod"
-post_tag = "Terra"
-tag_service = "DCOS 1.73"
-tag_environment = "Staging"
-tag_version = "1.02"
+pre_tag = "Dummy-Prod"        /* Pre-tag to be attached to AWS resources for identification */
+post_tag = "Terra"            /* Post-tag to be attached to AWS resources for identification */
+tag_service = "DCOS 1.73"     /* Specify the service */
+tag_environment = "Staging"   /* Specify the environment  */
+tag_version = "1.02"          /* Specify the version */
 
 /* Secret */
 aws_region = "ap-southeast-1"   /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
