@@ -19,21 +19,21 @@ variable "tag_version" {
 variable "aws_region" {
   description = "EC2 Region for the VPC"
 }
-
 variable "amis" {
   description = "CentOS AMIs by region"
   default = {
     ap-southeast-1 = "ami-f068a193"
     ap-northeast-1 = "ami-eec1c380"
     ap-south-1 = "ami-95cda6fa"
+    us-east-1 = "ami-6d1c2007"
+    us-west-1 = "ami-af4333cf"
+    us-west-2 = "ami-d2c924b2"
   }
 }
-
 variable "vpc_cidr" {
   description = "CIDR for the whole VPC"
   default = "10.0.0.0/16"
 }
-
 variable "public_subnet_cidr" {
   description = "CIDR for the Public Subnet"
   default = "10.0.0.0/24"
