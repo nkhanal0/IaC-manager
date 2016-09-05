@@ -8,6 +8,7 @@ resource "aws_instance" "manager" {
   subnet_id = "${aws_subnet.availability-zone-public.id}"
   source_dest_check = false
   associate_public_ip_address = true
+  iam_instance_profile = "${aws_iam_instance_profile.manager_instance_profile.name}"
   tags {
     Name = "${var.pre_tag}-Manager-${var.post_tag}"
     Service = "${var.tag_service}"
