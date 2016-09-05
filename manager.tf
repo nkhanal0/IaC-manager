@@ -1,5 +1,5 @@
 resource "aws_instance" "manager" {
-  ami = "${lookup(var.amis, var.aws_region)}"
+  ami = "${lookup(var.amis, var.AWS_DEFAULT_REGION)}"
   availability_zone = "${data.aws_availability_zones.available.names[0]}"
   instance_type = "t2.micro"
   key_name = "${var.key_pair_name}"
@@ -45,7 +45,7 @@ resource "aws_instance" "manager" {
       "tag_service = \"${var.tag_service}\"",
       "tag_environment = \"${var.tag_environment}\"",
       "tag_version = \"${var.tag_version}\"",
-      "aws_region = \"${var.aws_region}\"",
+      "aws_region = \"${var.AWS_DEFAULT_REGION}\"",
       "vpc_id = \"${aws_vpc.default.id}\"",
       "vpc_cidr = \"${aws_vpc.default.cidr_block}\"",
       "public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"",
