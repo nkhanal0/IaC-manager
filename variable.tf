@@ -16,9 +16,6 @@ variable "tag_environment" {
 variable "tag_version" {
   description = "Version tag"
 }
-variable "aws_region" {
-  description = "EC2 Region for the VPC"
-}
 variable "amis" {
   description = "CentOS AMIs by region"
   default = {
@@ -38,3 +35,4 @@ variable "public_subnet_cidr" {
   description = "CIDR for the Public Subnet"
   default = "10.0.0.0/24"
 }
+variable "AWS_DEFAULT_REGION" {}

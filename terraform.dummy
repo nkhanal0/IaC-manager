@@ -6,5 +6,4 @@ tag_environment = "Staging"   /* Specify the environment  */
 tag_version = "1.02"          /* Specify the version */
 
 /* Secret */
-aws_region = "ap-southeast-1"   /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
 key_pair_name = "Dummy"         /* key_pair_name should be exactly as it is in your AWS */
