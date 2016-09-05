@@ -4,9 +4,28 @@ This terraform script will setup an infrastructure for management in AWS and wil
  - VPC
  - Public subnet
  - Internet gateway
+ - An IAM role attached to the Manager node which has the following access.
+ 	- ec2
+ 	- elasticloadbalancing
+ 	- cloudwatch
+ 	- autoscaling
+ 	- lambda
+ 	- logs
+ 	- s3
+ 	- elasticache
+ 	- ecr
+ 	- route53
+ 	- route53domains
+ 	- apigateway
+ 	- es
+ 	- iam
+ 	- events
 
 #### Pre-requisites
-- An IAM account with administrator privileges.
+- An IAM account with the following access:
+	- AmazonEC2FullAccess
+	- IAMFullAccess
+	
 - Install [terraform](https://www.terraform.io/intro/getting-started/install.html) on your machine.
 - Public Key Access with Agent support/ Agent Forwarding:
 
