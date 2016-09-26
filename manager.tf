@@ -55,6 +55,7 @@ resource "aws_instance" "manager" {
       "public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"",
       "public_security_group_id = \"${aws_security_group.public.id}\"",
       "key_pair_name = \"${var.key_pair_name}\"",
+      "public_route_table_id = \"${aws_route_table.availability-zone-public.id}\"",
       "\n",
       "EOT",
     ]
