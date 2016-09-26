@@ -15,6 +15,10 @@ resource "aws_instance" "manager" {
     Environment = "${var.tag_environment}"
     Version = "${var.tag_version}"
   }
+  root_block_device {
+    volume_size = "20"
+    delete_on_termination = true
+  }
   connection {
     user = "centos"
   }
