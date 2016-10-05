@@ -1,5 +1,5 @@
-resource "aws_security_group" "public" {
-  name = "${var.pre_tag}-Mesos-Security-Public-${var.post_tag}"
+resource "aws_security_group" "management" {
+  name = "${var.pre_tag}-Management-Security-${var.post_tag}"
   description = "Allow incoming HTTP connections."
   ingress {
     from_port = 80
@@ -45,7 +45,7 @@ resource "aws_security_group" "public" {
   }
   vpc_id = "${aws_vpc.default.id}"
   tags {
-    Name = "${var.pre_tag}-Public-SG-${var.post_tag}"
+    Name = "${var.pre_tag}-Management-Security-${var.post_tag}"
     Service = "${var.tag_service}"
     Environment = "${var.tag_environment}"
     Version = "${var.tag_version}"

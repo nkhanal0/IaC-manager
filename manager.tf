@@ -3,9 +3,8 @@ resource "aws_instance" "manager" {
   availability_zone = "${data.aws_availability_zones.available.names[0]}"
   instance_type = "t2.micro"
   key_name = "${var.key_pair_name}"
-  vpc_security_group_ids = [
-    "${aws_security_group.public.id}"]
-  subnet_id = "${aws_subnet.availability-zone-public.id}"
+  vpc_security_group_ids = ["${aws_security_group.management.id}"]
+  subnet_id = "${aws_subnet.management_subnet.id}"
   source_dest_check = false
   associate_public_ip_address = true
   iam_instance_profile = "${aws_iam_instance_profile.manager_instance_profile.name}"
@@ -52,10 +51,10 @@ resource "aws_instance" "manager" {
       "aws_region = \"${var.AWS_DEFAULT_REGION}\"",
       "vpc_id = \"${aws_vpc.default.id}\"",
       "vpc_cidr = \"${aws_vpc.default.cidr_block}\"",
-      "public_subnet_id = \"${aws_subnet.availability-zone-public.id}\"",
-      "public_security_group_id = \"${aws_security_group.public.id}\"",
+      "management_subnet_id = \"${aws_subnet.management_subnet.id}\"",
+      "management_security_group_id = \"${aws_security_group.management.id}\"",
       "key_pair_name = \"${var.key_pair_name}\"",
-      "public_route_table_id = \"${aws_route_table.availability-zone-public.id}\"",
+      "internet_gateway_id = \"${aws_internet_gateway.internet_gateway.id}\"",
       "\n",
       "EOT",
     ]
