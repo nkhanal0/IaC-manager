@@ -2,7 +2,7 @@
 This terraform script will setup an infrastructure for management in AWS and will create following resources:
  - Manager Node (CentOS)
  - VPC
- - Public subnet
+ - Management subnet
  - Internet gateway
  - An IAM role attached to the Manager node which has the following access.
  	- ec2

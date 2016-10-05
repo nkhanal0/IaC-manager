@@ -11,13 +11,13 @@
 | aws_region | EC2 Region for the VPC | - | yes |
 | amis | Centos AMIs by region | `<map>` | no |
 | vpc_cidr | CIDR for the whole VPC | `"10.0.0.0/16"` | no |
-| public_subnet_cidr | CIDR for the Public Subnet | `"10.0.0.0/24"` | no |
+| management_subnet_cidr | CIDR for the Management Subnet | `"10.0.0.0/24"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| public_security_group_id |  |
-| public_subnet_id |  |
+| management_security_group_id |  |
+| management_subnet_id |  |
 | vpc_id |  |
 
