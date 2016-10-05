@@ -25,6 +25,7 @@ This terraform script will setup an infrastructure for management in AWS and wil
 - An IAM account with the following access:
 	- AmazonEC2FullAccess
 	- IAMFullAccess
+	- AmazonVPCFullAccess
 	
 - Install [terraform](https://www.terraform.io/intro/getting-started/install.html) on your machine.
 - Public Key Access with Agent support/ Agent Forwarding:
