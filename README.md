@@ -55,8 +55,9 @@ export TF_VAR_AWS_DEFAULT_REGION="ap-northeast-1"
   ssh -A centos@<manager_public_ip>
   ```
   
-#### Generate Docs 
-Generate terraform documentation by running `bash generate-docs.sh`
+#### Generate Terraform documentation 
+* Install [terraform-docs](https://github.com/segmentio/terraform-docs)
+* `bash generate-docs.sh`
 
 #### Notes
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
