@@ -1,20 +1,23 @@
+variable "AWS_DEFAULT_REGION" {
+  description = "Specify the AWS region"
+}
 variable "key_pair_name" {
-  description = "The key-pair name created with AWS"
+  description = "The key-pair to be used with EC2 instance"
 }
 variable "pre_tag" {
-  description = "Pre Tag for all the resources"
+  description = "Pre-tag to be attached to AWS resources for identification"
 }
 variable "post_tag" {
-  description = "Post Tag for all the resources"
+  description = "Post-tag to be attached to AWS resources for identification"
 }
 variable "tag_service" {
-  description = "Service tag"
+  description = "Specify the service"
 }
 variable "tag_environment" {
-  description = "Environment tag"
+  description = "Specify the environment"
 }
 variable "tag_version" {
-  description = "Version tag"
+  description = "Specify the version"
 }
 variable "amis" {
   description = "CentOS AMIs by region"
@@ -35,4 +38,3 @@ variable "management_subnet_cidr" {
   description = "CIDR for the Management Subnet"
   default = "10.0.0.0/24"
 }
-variable "AWS_DEFAULT_REGION" {}

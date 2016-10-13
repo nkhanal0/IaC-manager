@@ -5,5 +5,4 @@ tag_service = "DCOS 1.84"     /* Specify the service */
 tag_environment = "Staging"   /* Specify the environment  */
 tag_version = "2.03"          /* Specify the version */
 
-/* Secret */
 key_pair_name = "Dummy"         /* key_pair_name should be exactly as it is in your AWS */
