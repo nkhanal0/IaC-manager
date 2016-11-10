@@ -1,4 +1,4 @@
-/* Cluster Name */
+/*  See the tagging conventions in README  */
 pre_tag = "Dummy-Prod"        /* Pre-tag to be attached to AWS resources for identification */
 post_tag = "Terra"            /* Post-tag to be attached to AWS resources for identification */
 tag_service = "DCOS 1.84"     /* Specify the service */

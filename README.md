@@ -59,6 +59,18 @@ export TF_VAR_AWS_DEFAULT_REGION="ap-northeast-1"
 * Install [terraform-docs](https://github.com/segmentio/terraform-docs)
 * `bash generate-docs.sh`
 
+#### Tagging Conventions
+Tags provides specific identification of AWS resources. Following tags are mentioned in terraform.dummy.
+* pre_tag - This is used as a pre-text for 'Name' tags to identify AWS resources, DNS names & S3 bucket.
+* post_tag - This is used as a post-text for 'Name' tags to identify AWS resources, DNS names & S3 bucket. 
+
+Following restrictions applies:
+* pre_tag can be between 3 and 12 characters in length.
+* post_tag can be between 3 and 6 characters in length.
+* Tag name can contain only alphabets, numbers and dashes.
+* Tag name cannot begin or end with a dash.
+* Do not use `aws` as prefix.
+
 #### Notes
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
